@@ -9,7 +9,7 @@ moment.tz.setDefault("UTC");
 // Define moment to be usable on any component
 Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.moment } });
 
-import { checkFilter } from './util/bus';
+import { checkFilter, setDay } from './util/bus';
 const bus = new Vue();
 Object.defineProperty(Vue.prototype, '$bus', { get() { return this.$root.bus } });
 
@@ -34,6 +34,7 @@ new Vue({
             this.movies = response.data;
         });
         this.$bus.$on('check-filter', checkFilter.bind(this));
+        this.$bus.$on('set-day', setDay.bind(this));
     },
     router
 })

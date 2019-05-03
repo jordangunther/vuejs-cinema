@@ -20,4 +20,6 @@ function removeClass(el, className) {
   }
 }
 
+
+
 export { hasClass, addClass, removeClass };

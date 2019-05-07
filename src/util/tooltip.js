@@ -16,7 +16,6 @@ export default {
     install(Vue) {
         Vue.directive('tooltip', {
             bind(el, bindings) {
-                console.log(bindings);
                 // el in this case is the class session-time-wrapper
                 // create span element with seats available text in it
                 let span = document.createElement('SPAN');
